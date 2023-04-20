@@ -8,7 +8,7 @@ const Jugadores = ({jugadores}) => {
       <div className='contenedor-jugadores'>
         {
           jugadores.map(j => (
-            <article className='jugador'>
+            <article className='jugador' key={j.nombre}>
               <img src={j.foto} alt={j.nombre}/>
               <h3>{j.nombre}</h3>
               <div>

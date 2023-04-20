@@ -1,21 +1,26 @@
-import { configureStore } from '@reduxjs/toolkit';
+import {configureStore} from '@reduxjs/toolkit';
 
 const initialState = {
-    jugadores: [{
-        id: 1,
-        nombre: "Carlos Tevez",
-        foto: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/InddelVal-Boca_%284%29.jpg/272px-InddelVal-Boca_%284%29.jpg"
-    }],
+    jugadores: [],
     titulares: [],
     suplentes: []
 }
 
-const reducerEntrenador = (state = initialState,action) => {
-    return state
+const reducerEntrenador = (state = initialState, action) => {
+    switch (action.type) {
+        case 'AGREGAR_JUGADOR':
+            return {
+                ...state,
+                jugadores: [
+                    ...state.jugadores,
+                    action.payload
+                ]
+            }
+        default:
+            return state;
+    }
 }
 
-const store = configureStore({
-    reducer: reducerEntrenador
-})
+const store = configureStore({reducer: reducerEntrenador})
 
 export default store
