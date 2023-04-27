@@ -15,9 +15,8 @@ function App() {
     <Provider store={store}>
         <main>
           <h1>Squad Manager</h1>
-
           <section className='cargarJugadoresContainer'>
-            <button onClick={handleOpenModal}>Cargar Jugador</button>
+            <button className='buttonCargarJugador' onClick={handleOpenModal}>Cargar Jugador</button>
             <ModalCargarJugadores isOpen={isOpen} onClose={handleCloseModal}>
               <p>Contenido del modal...</p>
             </ModalCargarJugadores>

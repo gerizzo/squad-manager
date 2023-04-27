@@ -35,6 +35,7 @@ const ModalCargarJugadores = ({isOpen, onClose}) => {
         }
 
         // Si los campos son válidos, agregar jugador
+
         if (isValid) {
             const nuevoJugador = {
                 nombre,
@@ -60,7 +61,8 @@ const ModalCargarJugadores = ({isOpen, onClose}) => {
     };
 
     const handleFotoChange = (event) => {
-        setFoto(event.target.files[0]);
+        const imagen = event.target.files[0];
+        setFoto(imagen);
     };
 
     if(!isOpen) return null;
